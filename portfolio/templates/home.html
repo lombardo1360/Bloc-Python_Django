@@ -1,0 +1,47 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+
+    {% load static %}
+
+    <header class="row bg-black">
+        <div class="col-md-4">
+            <img src="{% static 'logo_size.jpg'%}" alt="">
+        </div>
+
+        <div class="col-md-8 my-auto">
+            <h1>I am <strong>Ryan Ray</strong></h1>
+            <h3>I am Python FullStack</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ullam nulla alias, incidunt cumque natus quis ex in, laboriosam iusto nesciunt soluta officiis explicabo impedit deserunt asperiores delectus? Voluptate facilis, nulla quaerat consequatur minus accusantium corrupti quis! Accusamus quod numquam, at id animi illum officia similique optio dolorum recusandae sed tempora delectus quam alias doloribus rerum ratione voluptatibus iusto qui sint dolor dolore inventore autem. Sed tempore debitis maiores. Officiis error nam cum aspernatur pariatur. Quas doloribus aspernatur ipsam amet maiores tenetur qui reprehenderit commodi tempore quidem? Ipsa corrupti porro, nesciunt velit et fugiat ratione nostrum similique, quas laboriosam sapiente.</p>
+            <a href="{% static 'perfilJava.pdf'%}" class="btn btn-primary btn-lg rounded-0 my-3">Download CV</a>
+        </div>
+    </header>
+
+<div class="row my-4 text-center">
+
+    <h3> My project </h3>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, magnam?</p>
+
+    {%for project in projects%}
+
+<div class="cold-md-4 ">
+
+    <div class="card bg-black card-project">
+        <img src="{{project.image.url}}" alt="{{project.title}}" class="card-img-top">
+        <div class="card-body">
+            <h2>{{project.title}}</h2> 
+            <p>{{project.description}}</p>
+                    
+            {% if project.url %}
+            <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm" target="_blank">{{project.url}}</a>
+            {% endif %}  
+        </div>
+    </div>
+</div>
+
+    {% endfor %}
+
+{% endblock %}
+</div> 
+
+    
